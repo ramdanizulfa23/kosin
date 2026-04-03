@@ -2,9 +2,13 @@
 
 namespace App\Filament\Resources\Categories\Tables;
 
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Table;
 
 class CategoriesTable
@@ -13,13 +17,17 @@ class CategoriesTable
     {
         return $table
             ->columns([
-                //
+                ImageColumn::make('image'),
+                TextColumn::make('name'),
+                TextColumn::make('slug'),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make(),
+                ViewAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
