@@ -27,6 +27,7 @@ class BoardingHouseForm
                                 FileUpload::make('thumbnail')
                                     ->image()
                                     ->directory('boarding-houses')
+                                    ->disk('public')
                                     ->required()
                                     ->columnSpan(2),
                                 TextInput::make('name')
@@ -68,6 +69,7 @@ class BoardingHouseForm
                                         FileUpload::make('image')
                                             ->image()
                                             ->directory('bonuses')
+                                            ->disk('public')
                                             ->required()
                                             ->columnSpan(2),
                                         TextInput::make('name')
@@ -86,6 +88,7 @@ class BoardingHouseForm
                                         FileUpload::make('image')
                                             ->image()
                                             ->directory('rooms')
+                                            ->disk('public')
                                             ->required()
                                             ->columnSpan(2),
                                         TextInput::make('name')
@@ -120,6 +123,7 @@ class BoardingHouseForm
                                                 FileUpload::make('image')
                                                     ->image()
                                                     ->directory('room-images')
+                                                    ->disk('public')
                                                     ->required()
                                                     ->columnSpan(2),
                                             ]),

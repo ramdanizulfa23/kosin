@@ -17,6 +17,7 @@ class TestimonialForm
                     ->label('Photo')
                     ->directory('testimonials')
                     ->image()
+                    ->disk('public')
                     ->required()
                     ->columnspan(2),
                 Select::make('boarding_house_id')
