@@ -14,6 +14,7 @@ use Filament\Schemas\Schema;
 use Filament\Infolists\Components\IconEntry;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class BoardingHouseResource extends Resource
 {
@@ -22,6 +23,8 @@ class BoardingHouseResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingOffice2;
 
     protected static ?string $recordTitleAttribute = 'name';
+
+    protected static string | UnitEnum | null $navigationGroup = 'Boarding House Management';
 
     public static function form(Schema $schema): Schema
     {
