@@ -25,8 +25,7 @@ class BoardingHousesTable
                     ->money('idr', true),
                 ImageColumn::make('thumbnail')
                     ->label('Thumbnail')
-                    ->square()
-                    ->size(50),
+                    ->disk('public')
             ])
             ->filters([
                 //

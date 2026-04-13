@@ -21,7 +21,7 @@ class TransactionsTable
                 TextColumn::make('room.name')->label('Room')->searchable(),
                 TextColumn::make('name')->label('Name')->searchable(),
                 TextColumn::make('email')->label('Email')->searchable(),
-                TextColumn::make('phone_number')->label('Phone')->searchable(),
+                TextColumn::make('phone_number')->searchable(),
                 TextColumn::make('payment_method')
                     ->label('Payment Method')
                     ->formatStateUsing(fn(string $state): string => match ($state) {
@@ -34,7 +34,7 @@ class TransactionsTable
                     ->label('Status')
                     ->formatStateUsing(fn(string $state): string => match ($state) {
                         'pending' => 'Pending',
-                        'paid' => 'Paid',
+                        'paid' => 'Success',
                         'cancelled' => 'Cancelled',
                         default => $state,
                     })

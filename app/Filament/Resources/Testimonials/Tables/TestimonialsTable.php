@@ -17,7 +17,7 @@ class TestimonialsTable
     {
         return $table
             ->columns([
-                ImageColumn::make('photo')->label('Photo')->square(),
+                ImageColumn::make('photo')->label('Photo')->square()->disk('public'),
                 TextColumn::make('boardingHouse.name')->label('Boarding House')->searchable(),
                 TextColumn::make('name')->label('Name')->searchable(),
                 TextColumn::make('rating')->label('Rating'),
