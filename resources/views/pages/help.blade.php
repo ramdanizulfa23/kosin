@@ -22,7 +22,7 @@
 
     <div class="mt-6">
         <h2 class="font-bold text-[32px] leading-tight text-black dark:text-white transition-colors">Butuh Bantuan?</h2>
-        <p class="text-gray-700 dark:text-gray-400 transition-colors">Kami siap membantu kendala kosan lu.</p>
+        <p class="text-gray-700 dark:text-gray-400 transition-colors">Kami siap membantu kendala kosan anda.</p>
     </div>
 
     <div class="flex flex-col gap-4 mt-2">
@@ -38,7 +38,7 @@
             </div>
             <hr class="border-black/5 dark:border-white/10">
             <p class="text-sm text-gray-600 dark:text-gray-400 leading-[24px]">
-                Pilih kosan favorit lu, isi data diri dengan benar (terutama nomor WA), lalu selesaikan pembayaran via Midtrans.
+                Pilih kosan favorit anda, isi data diri dengan benar (terutama nomor WA), lalu selesaikan pembayaran.
             </p>
         </div>
 

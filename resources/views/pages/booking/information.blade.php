@@ -3,22 +3,25 @@
 @section('content')
 
 <style>
-    /* Paksa teks input & autofill jadi PUTIH NYALA */
+    /* Autofill biar tetap cakep di kedua mode */
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
     input:-webkit-autofill:active {
         -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-        -webkit-text-fill-color: #FFFFFF !important;
         transition: background-color 5000s ease-in-out 0s;
+        /* Biarkan warna teks mengikuti sistem/class Tailwind */
     }
 
-    input {
-        color: #FFFFFF !important;
-        background-color: transparent !important;
-    }
+    /* HAPUS ATURAN 'input { color: #FFFFFF !important; }' YANG LAMA */
 
     input::placeholder {
+        /* Placeholder dibuat fleksibel */
+        color: rgba(156, 163, 175, 0.8) !important;
+        /* warna gray-400 */
+    }
+
+    .dark input::placeholder {
         color: rgba(255, 255, 255, 0.4) !important;
     }
 </style>
@@ -85,18 +88,18 @@
 
         <div class="flex flex-col gap-1 px-6">
             <h2 class="font-bold text-lg md:text-xl text-black dark:text-white">Your Personal Data</h2>
-            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">Pastiin data lu bener ya brok biar admin gampang verifikasi.</p>
+            <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">Isi data anda disini.</p>
         </div>
 
         <div id="InputContainer" class="flex flex-col gap-5 px-6">
             <div class="flex flex-col w-full gap-2">
                 <p class="font-semibold text-black dark:text-white text-sm md:text-base ml-2">Complete Name</p>
-                <label class="flex items-center w-full rounded-full p-4 gap-4 bg-white/10 dark:bg-white/5 border transition-all duration-300
-                    {{ $errors->has('name') ? 'border-red-500 ring-1 ring-red-500' : 'border-white/50 dark:border-white/10' }} 
-                    focus-within:ring-2 focus-within:ring-[#91BF77]">
-                    <img src="{{asset('assets/images/icons/profile-2user.svg')}}" class="w-5 h-5 flex shrink-0 dark:invert opacity-60" alt="icon">
+                <label class="flex items-center w-full rounded-full p-4 gap-4 bg-black/5 dark:bg-white/5 border transition-all duration-300
+            {{ $errors->has('name') ? 'border-red-500 ring-1 ring-red-500' : 'border-gray-300 dark:border-white/10' }} 
+            focus-within:ring-2 focus-within:ring-[#91BF77]">
+                    <img src="{{asset('assets/images/icons/profile-2user.svg')}}" class="w-5 h-5 flex shrink-0 dark:invert opacity-100" alt="icon">
                     <input type="text" name="name" value="{{ old('name') }}"
-                        class="appearance-none outline-none w-full bg-transparent font-bold text-sm md:text-base text-white placeholder:text-gray-400"
+                        class="appearance-none outline-none w-full bg-transparent font-bold text-sm md:text-base text-black dark:text-white placeholder:text-gray-400"
                         placeholder="Write your full name">
                 </label>
                 @error('name') <p class="text-[10px] text-red-500 ml-4">{{ $message }}</p> @enderror
@@ -104,12 +107,12 @@
 
             <div class="flex flex-col w-full gap-2">
                 <p class="font-semibold text-black dark:text-white text-sm md:text-base ml-2">Email Address</p>
-                <label class="flex items-center w-full rounded-full p-4 gap-4 bg-white/10 dark:bg-white/5 border transition-all duration-300
-                    {{ $errors->has('email') ? 'border-red-500 ring-1 ring-red-500' : 'border-white/50 dark:border-white/10' }} 
-                    focus-within:ring-2 focus-within:ring-[#91BF77]">
-                    <img src="{{asset('assets/images/icons/sms.svg')}}" class="w-5 h-5 flex shrink-0 dark:invert opacity-60" alt="icon">
+                <label class="flex items-center w-full rounded-full p-4 gap-4 bg-black/5 dark:bg-white/5 border transition-all duration-300
+            {{ $errors->has('email') ? 'border-red-500 ring-1 ring-red-500' : 'border-gray-300 dark:border-white/10' }} 
+            focus-within:ring-2 focus-within:ring-[#91BF77]">
+                    <img src="{{asset('assets/images/icons/sms.svg')}}" class="w-5 h-5 flex shrink-0 dark:invert opacity-100" alt="icon">
                     <input type="email" name="email" value="{{ old('email') }}"
-                        class="appearance-none outline-none w-full bg-transparent font-bold text-sm md:text-base text-white placeholder:text-gray-400"
+                        class="appearance-none outline-none w-full bg-transparent font-bold text-sm md:text-base text-black dark:text-white placeholder:text-gray-400"
                         placeholder="Write your email">
                 </label>
                 @error('email') <p class="text-[10px] text-red-500 ml-4">{{ $message }}</p> @enderror
@@ -117,25 +120,25 @@
 
             <div class="flex flex-col w-full gap-2">
                 <p class="font-semibold text-black dark:text-white text-sm md:text-base ml-2">Phone No</p>
-                <label class="flex items-center w-full rounded-full p-4 gap-4 bg-white/10 dark:bg-white/5 border transition-all duration-300
-                    {{ $errors->has('phone_number') ? 'border-red-500 ring-1 ring-red-500' : 'border-white/50 dark:border-white/10' }} 
-                    focus-within:ring-2 focus-within:ring-[#91BF77]">
-                    <img src="{{asset('assets/images/icons/call.svg')}}" class="w-5 h-5 flex shrink-0 dark:invert opacity-60" alt="icon">
+                <label class="flex items-center w-full rounded-full p-4 gap-4 bg-black/5 dark:bg-white/5 border transition-all duration-300
+            {{ $errors->has('phone_number') ? 'border-red-500 ring-1 ring-red-500' : 'border-gray-300 dark:border-white/10' }} 
+            focus-within:ring-2 focus-within:ring-[#91BF77]">
+                    <img src="{{asset('assets/images/icons/call.svg')}}" class="w-5 h-5 flex shrink-0 dark:invert opacity-100" alt="icon">
                     <input type="tel" name="phone_number" value="{{ old('phone_number') ?? old('phone') }}"
-                        class="appearance-none outline-none w-full bg-transparent font-bold text-sm md:text-base text-white placeholder:text-gray-400"
+                        class="appearance-none outline-none w-full bg-transparent font-bold text-sm md:text-base text-black dark:text-white placeholder:text-gray-400"
                         placeholder="Write your phone number">
                 </label>
                 @error('phone_number') <p class="text-[10px] text-red-500 ml-4">{{ $message }}</p> @enderror
             </div>
 
-            <div class="flex items-center justify-between p-5 rounded-[30px] bg-white/10 dark:bg-white/5 border border-white/40 dark:border-white/10 backdrop-blur-xl">
+            <div class="flex items-center justify-between p-5 rounded-[30px] bg-black/5 dark:bg-white/5 border border-gray-300 dark:border-white/10 backdrop-blur-xl">
                 <p class="font-bold text-black dark:text-white text-sm md:text-base">Duration (Month)</p>
                 <div class="flex items-center gap-5">
                     <button type="button" id="Minus" class="w-10 h-10 flex shrink-0 active:scale-90 transition-transform">
                         <img src="{{asset('assets/images/icons/minus.svg')}}" class="dark:invert" alt="minus">
                     </button>
                     <input id="Duration" type="text" value="1" name="duration" readonly
-                        class="appearance-none outline-none bg-transparent w-8 text-center font-black text-xl text-white">
+                        class="appearance-none outline-none bg-transparent w-8 text-center font-black text-xl text-black dark:text-white">
                     <button type="button" id="Plus" class="w-10 h-10 flex shrink-0 active:scale-90 transition-transform">
                         <img src="{{asset('assets/images/icons/plus.svg')}}" class="dark:invert" alt="plus">
                     </button>

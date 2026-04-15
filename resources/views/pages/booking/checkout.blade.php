@@ -27,7 +27,7 @@
             class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shrink-0 rounded-full bg-white/20 dark:bg-white/10 backdrop-blur-xl border border-white/40 shadow-lg active:scale-90 transition-all">
             <img src="{{asset('assets/images/icons/arrow-left.svg')}}" class="w-6 h-6 md:w-7 md:h-7 dark:invert" alt="icon">
         </a>
-        <p class="font-bold text-black dark:text-white text-sm md:text-lg">Checkout Koskos</p>
+        <p class="font-bold text-black dark:text-white text-sm md:text-lg">Checkout Kos</p>
         <div class="dummy-btn w-10 md:w-12"></div>
     </div>
 
