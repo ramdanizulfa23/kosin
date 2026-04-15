@@ -19,7 +19,8 @@ class CategoriesTable
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('slug'),
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                    ->disk('public'),
             ])
             ->filters([
                 //

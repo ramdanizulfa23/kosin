@@ -47,7 +47,6 @@ class TransactionForm
                     ->options([
                         'pending' => 'Pending',
                         'paid' => 'Paid',
-                        'cancelled' => 'Cancelled',
                     ])
                     ->required(),
                 DatePicker::make('start_date')
