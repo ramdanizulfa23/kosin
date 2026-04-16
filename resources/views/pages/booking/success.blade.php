@@ -16,7 +16,7 @@
                 Booking Successful<br>
                 <span class="text-[#91BF77]">Congratulations!</span>
             </h1>
-            <p class="text-[10px] md:text-sm text-gray-500 dark:text-gray-400">Kosan lu udah aman brok, tinggal nunggu verifikasi admin aja.</p>
+            <p class="text-[10px] md:text-sm text-gray-500 dark:text-gray-400">Kos telah di booking, kami tunggu kehadirannya.</p>
         </div>
 
         <div id="Header" class="relative flex flex-col w-full rounded-[40px] border border-white/60 dark:border-white/10 p-5 md:p-8 gap-6 bg-white/40 dark:bg-white/5 backdrop-blur-3xl shadow-2xl">
